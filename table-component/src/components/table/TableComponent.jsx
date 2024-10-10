@@ -32,6 +32,7 @@ function TableComponent({ data, columns, renderers }) {
           })}
         </tbody>
       </table>
+      <button>Back</button>
     </div>
   );
 }
