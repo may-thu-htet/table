@@ -1,23 +1,17 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import AmazonList from "./components/list/AmazonList";
+import LandingPage from "./components/landingPage/LandingPage";
+import GoogleList from "./components/list/GoogleList";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/amazon-list">Amazon Questions list</Link>
-          </li>
-          <li>
-            <Link to="/google-list">Google Questions list</Link>
-          </li>
-        </ul>
-      </nav>
+      {/* <LandingPage /> */}
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/amazon-list" element={<AmazonList />} />
-        {/* <Route path="/google-list" element="" /> */}
+        <Route path="/google-list" element={<GoogleList />} />
       </Routes>
     </Router>
   );

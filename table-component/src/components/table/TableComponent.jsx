@@ -1,5 +1,8 @@
 import React from "react";
 import Input from "../input/Input";
+import Button from "../button/Button";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TableComponent({ data, columns, renderers }) {
   return (
@@ -32,7 +35,6 @@ function TableComponent({ data, columns, renderers }) {
           })}
         </tbody>
       </table>
-      <button>Back</button>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import TableComponent from "../table/TableComponent";
 import amazonData from "../../data/leetcode_amazon_interview_Qs_mixed.json";
-import React from "react";
+import React, { Fragment } from "react";
 import ProgressBar from "../progressBar/ProgressBar";
+import BackButton from "../button/BackButton";
 
 function AmazonList() {
   const columns = ["Title", "Difficulty", "Fees", "Frequency"];
@@ -13,11 +14,14 @@ function AmazonList() {
   };
 
   return (
-    <TableComponent
-      data={amazonData.questions}
-      columns={columns}
-      renderers={renderers}
-    />
+    <Fragment>
+      <BackButton />
+      <TableComponent
+        data={amazonData.questions}
+        columns={columns}
+        renderers={renderers}
+      />
+    </Fragment>
   );
 }
 
