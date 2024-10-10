@@ -1,8 +1,7 @@
 import React from "react";
-import amazonData from "../../data/leetcode_amazon_interview_Qs_mixed.json";
 import Input from "../input/Input";
 
-function TableComponent() {
+function TableComponent({ data, columns, renderers }) {
   return (
     <div className="table-container">
       <h1>Amazon Interview Questions</h1>
