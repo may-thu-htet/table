@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
+import AmazonList from "./components/list/AmazonList";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/amazon-list" element=""></Route>
-        <Route path="/google-list" element=""></Route>
+        <Route path="/amazon-list" element={<AmazonList />} />
+        {/* <Route path="/google-list" element="" /> */}
       </Routes>
     </Router>
   );

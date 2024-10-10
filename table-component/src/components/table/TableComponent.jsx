@@ -5,17 +5,31 @@ function TableComponent({ data, columns, renderers }) {
   return (
     <div className="table-container">
       <h1>Amazon Interview Questions</h1>
-      <Input placeholder="Please enter to search" type="text"></Input>
+      <Input placeholder="Please enter to search" type="text" />
       <table className="table">
         <thead>
           <tr className="table-head-row">
-            <th className="table-head-cell"></th>
+            {columns.map((col) => (
+              <th className="table-head-cell" key={col}>
+                {col.toUpperCase()}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody className="table-body">
-          <tr className="table-body-row">
-            <td className="table-body-cell"></td>
-          </tr>
+          {data.map((item, index) => {
+            return (
+              <tr className="table-body-row" key={index}>
+                {columns.map((col) => {
+                  return (
+                    <td className="table-body-cell" key={col}>
+                      {renderers[col](item)}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
